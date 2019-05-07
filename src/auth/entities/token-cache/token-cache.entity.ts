@@ -1,10 +1,10 @@
-import { Entity, BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, BaseEntity, Column, ObjectIdColumn, ObjectID } from 'typeorm';
 import * as uuidv4 from 'uuid/v4';
 
 @Entity()
 export class TokenCache extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @ObjectIdColumn()
+  _id: ObjectID;
   @Column()
   accessToken: string;
   @Column()

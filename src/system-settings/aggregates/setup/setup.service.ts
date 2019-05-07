@@ -42,7 +42,7 @@ export class SetupService {
     const info = await this.icSettingsService.find();
     if (info) {
       delete info.clientSecret;
-      delete info.id;
+      delete info._id;
     }
     return info;
   }

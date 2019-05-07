@@ -15,7 +15,6 @@ export class ConnectController {
   @Post('v1/user_delete')
   @UseGuards(AuthServerVerificationGuard)
   userDelete(@Body('user') user) {
-    // No Personal data stored on infrastructure-console
     return { user };
   }
 }

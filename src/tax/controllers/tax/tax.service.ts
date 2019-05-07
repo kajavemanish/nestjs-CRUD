@@ -23,7 +23,7 @@ export class TaxService {
   }
 
   async update(tax: Tax): Promise<UpdateResult> {
-    return await this.taxRepository.update(tax.id, tax);
+    return await this.taxRepository.update(tax._id, tax);
   }
 
   async delete(id): Promise<DeleteResult> {

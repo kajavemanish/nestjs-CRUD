@@ -1,11 +1,11 @@
-import { Column, Entity, BaseEntity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, BaseEntity, ObjectIdColumn, ObjectID } from 'typeorm';
 import * as uuidv4 from 'uuid/v4';
 import { SERVICE } from '../../../constants/app-strings';
 
 @Entity()
 export class ServerSettings extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @ObjectIdColumn()
+  _id: ObjectID;
 
   @Column()
   uuid: string;

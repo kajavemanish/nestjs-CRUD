@@ -7,7 +7,6 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prestart:debug": "./nvm-use.sh",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
     "start:debug": "nodemon --config nodemon-debug.json",
@@ -30,10 +29,10 @@
     "class-validator": "^0.9.1",
     "cron": "^1.7.1",
     "joi": "^14.3.1",
+    "mongodb": "^3.2.3",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3",
-    "sqlite3": "^4.0.6",
     "typeorm": "^0.2.16"
   },
   "devDependencies": {
@@ -53,17 +52,28 @@
     "typescript": "^3.2.4"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
+    "moduleDirectories": [
+      "src",
+      "node_modules"
     ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
     "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
+      "^.+\\.tsx?$": "ts-jest"
     },
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testRegex": "/src/.*\\.(test|spec).(ts|tsx|js)$",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,tsx,ts}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov"
+    ]
   }
 }
