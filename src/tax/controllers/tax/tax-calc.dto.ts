@@ -1,14 +1,14 @@
-import { IsNumberString, IsString } from 'class-validator';
+import { IsString, IsNumber } from 'class-validator';
 
 export class TaxCalcDto {
-  @IsNumberString()
+  @IsString()
   itemCode: string;
   @IsString()
   itemName: string;
-  @IsNumberString()
-  quantity: string;
-  @IsNumberString()
-  value: string;
+  @IsNumber()
+  quantity: number;
+  @IsNumber()
+  value: number;
   @IsString()
   state: string;
   @IsString()

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { TaxController } from './tax.controller';
-import { TaxService } from './tax.service';
+import { TaxService } from '../../entities/tax-calc-log/tax.service';
 import { TokenGuard } from '../../../auth/guards/token.guard';
 import { RoleGuard } from '../../../auth/guards/role.guard';
 import { Reflector } from '@nestjs/core';

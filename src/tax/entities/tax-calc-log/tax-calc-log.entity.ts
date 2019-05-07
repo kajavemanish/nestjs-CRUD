@@ -1,9 +1,12 @@
 import { Entity, Column, ObjectIdColumn, ObjectID } from 'typeorm';
 
 @Entity()
-export class Tax {
+export class TaxCalcLog {
   @ObjectIdColumn()
   _id: ObjectID;
+
+  @Column()
+  uuid: string;
 
   @Column()
   itemCode: number;

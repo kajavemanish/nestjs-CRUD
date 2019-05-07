@@ -11,7 +11,7 @@ import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { TokenCache } from './auth/entities/token-cache/token-cache.entity';
 import { ServerSettings } from './system-settings/entities/server-settings/server-settings.entity';
-import { Tax } from './tax/entities/tax/tax.entity';
+import { TaxCalcLog } from './tax/entities/tax-calc-log/tax-calc-log.entity';
 
 @Module({
   imports: [
@@ -25,7 +25,7 @@ import { Tax } from './tax/entities/tax/tax.entity';
           username: configService.get('DB_USER'),
           password: configService.get('DB_PASSWORD'),
           database: configService.get('DB_NAME'),
-          entities: [TokenCache, ServerSettings, Tax],
+          entities: [TokenCache, ServerSettings, TaxCalcLog],
           synchronize: true,
           useNewUrlParser: true,
         } as MongoConnectionOptions),
